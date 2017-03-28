@@ -73,4 +73,10 @@
   }
 
   // Your custom JavaScript goes here
+  $(function() {
+    console.log('ready');
+    particlesJS.load('home', '/scripts/libs/particlesjs-config.json', function() {
+      console.log('particles.js loaded - callback');
+    });
+  });
 })();

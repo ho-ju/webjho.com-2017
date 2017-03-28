@@ -1,25 +1,130 @@
+/* ==========================================================================
+   Vars
+   ========================================================================== */
 $bg-color: red;
 $white: #fff;
 $silver: #cfcbcb;
+$jhoBlue: #0f7e8e;
+$goldy: #555555;
 
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+@mixin basicAnimateAll($duration: .25s){
+    -webkit-transition: all $duration ease;
+    -moz-transition: all $duration ease;
+    -o-transition: all $duration ease;
+    -ms-transition: all $duration ease
+}
+
+/* ==========================================================================
+   01 - General
+   ========================================================================== */
 body {
     background: url('/images/concrete-wall.png') top left repeat;
+    background-attachment: fixed;
+    font-family: 'Roboto Slab', serif;
+    color: $white;
+    font-size: 0.7em;
+    font-weight: 300;
+    letter-spacing: 0.05em;
 }
 
 h1 {
     font-family: 'Fjalla One', sans-serif;
-    color: $white;
+    color: $silver;
     font-size: 2.5em;
     letter-spacing: 0.25em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
 
+a {
+    color: $silver;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    @include basicAnimateAll();
+    &:hover {
+        border-bottom: 1px solid $silver;
+    }
+}
+
+p {
+    line-height: 1.8em;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    &.hlist {
+        li {
+            list-style: none;
+            display: inline-block;
+            margin-right: 5px;
+            &:last-child { margin-right: 0; }
+        }
+    }
+}
+
+
+/* ==========================================================================
+   02 - IconFont
+   ========================================================================== */
+@font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.eot");
+    src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Flaticon.woff") format("woff"),
+    url("../fonts/Flaticon.ttf") format("truetype"),
+    url("../fonts/Flaticon.svg#Flaticon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: "Flaticon";
+        src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+    }
+}
+
+.fi:before{
+    display: inline-block;
+    font-family: "Flaticon";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-decoration: inherit;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+.flaticon-linkedin:before { content: "\f100"; }
+.flaticon-social-media:before { content: "\f101"; }
+.flaticon-black:before { content: "\f102"; }
+.flaticon-signs:before { content: "\f103"; }
+
+$font-Flaticon-linkedin: "\f100";
+$font-Flaticon-social-media: "\f101";
+$font-Flaticon-black: "\f102";
+$font-Flaticon-signs: "\f103";
+
+
+/* ==========================================================================
+   03 - Pages
+   ========================================================================== */
 section {
     height: 100vh;
 
     .container {
-        width: 1000px;
-        padding: 0 20px;
+        width: auto;
+        max-width: 960px;
+        padding: 0 15px;
         margin: 0 auto;
         height: 100%;
     }
@@ -40,5 +145,74 @@ section {
     &#home {
         text-align: center;
         h1 { text-transform: uppercase; }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .content {
+            z-index: 100;
+            position: relative;
+        }
+        .contact {
+            position: absolute;
+            left: calc(50% - (324px/2px));
+            bottom: 50px;
+
+            .hlist {
+                li {
+                    margin-right: 10px;
+                    a {
+                        .fi {
+                            margin-right: 2px;
+                            @include basicAnimateAll();
+                        }
+                        &:hover {
+                            border-bottom: transparent;
+                            .fi {
+                                color: $jhoBlue;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // About Page
+    &#about {
+        .content-container {
+            vertical-align: top;
+            .content {
+                vertical-align: top;
+                .simpsonized {
+                    overflow: hidden;
+                    position: relative;
+
+                    img { width: 75px; }
+
+                    .left-line,
+                    .right-line {
+                        height: 100%;
+                        width: 44%;
+                        border-top: 1px solid $goldy;
+                        top: 55px;
+                        left: 0;
+                        position: absolute;
+                    }
+                    .right-line {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+                .text {
+                    max-width: 500px;
+                    margin: 25px auto;
+                }
+            }
+        }
     }
 }
