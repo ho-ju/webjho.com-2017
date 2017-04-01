@@ -73,10 +73,87 @@
   }
 
   // Your custom JavaScript goes here
+
+  var WebJhoApp = function() {};
+
+  WebJhoApp.prototype = {
+    initParticles: function() {
+      particlesJS.load(
+        'home',
+        '/scripts/libs/particlesjs-config.json',
+        function() {
+          console.log('particles.js loaded - callback');
+        }
+      );
+    },
+    initNavWatch: function() {
+      var triggerPoint = $('#about').position().top;
+      var $nav = $('nav');
+      var currPos = 0;
+      console.log(triggerPoint);
+
+      $(window).scroll(function() {
+        currPos = $(window).scrollTop();
+        if (currPos >= triggerPoint) {
+          $nav.addClass('showMeTheMoney');
+        } else {
+          $nav.removeClass('showMeTheMoney');
+        }
+      });
+    },
+    initBars: function() {
+      var opts = {
+        strokeWidth: 6,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#f1c232',
+        trailColor: '#555555',
+        trailWidth: 1,
+        svgStyle: null,
+        text: {
+          value: '90',
+          alignToBottom: false
+        }
+        // ,step: (state, bar) => {
+        //   bar.path.setAttribute('stroke', state.color);
+        //   var value = Math.round(bar.value() * 100);
+        //   if (value === 0) {
+        //     bar.setText('');
+        //   } else {
+        //     bar.setText(value);
+        //   }
+        //   bar.text.style.color = state.color;
+        // }
+      };
+      var bar1 = new ProgressBar.Circle(cssBar, opts);
+
+      opts.color = '#e69138';
+      var bar2 = new ProgressBar.Circle(jsBar, opts);
+
+      opts.color = '#0f7e8e';
+      var bar3 = new ProgressBar.Circle(teamBar, opts);
+
+      opts.color = '#a64d79';
+      var bar4 = new ProgressBar.Circle(commBar, opts);
+
+      opts.color = '#3d85c6';
+      var bar5 = new ProgressBar.Circle(leaderBar, opts);
+
+      // Animate
+      bar1.animate(0.9);
+      bar2.animate(0.8);
+      bar3.animate(0.9);
+      bar4.animate(0.9);
+      bar5.animate(0.7);
+    }
+  };
+
   $(function() {
     console.log('ready');
-    particlesJS.load('home', '/scripts/libs/particlesjs-config.json', function() {
-      console.log('particles.js loaded - callback');
-    });
+
+    var myApp = new WebJhoApp();
+    myApp.initParticles();
+    myApp.initNavWatch();
+    myApp.initBars();
   });
 })();

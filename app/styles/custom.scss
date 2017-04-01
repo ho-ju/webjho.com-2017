@@ -4,6 +4,9 @@
 $bg-color: red;
 $white: #fff;
 $silver: #cfcbcb;
+$lightGrey: #eee;
+$darkGrey: #222;
+$medGrey: #666;
 $jhoBlue: #0f7e8e;
 $goldy: #555555;
 
@@ -17,6 +20,13 @@ $goldy: #555555;
     -ms-transition: all $duration ease
 }
 
+@mixin lessenOpacity($opacity: .8){
+    opacity: $opacity;
+}
+
+@mixin fjallaFont(){
+    font-family: 'Fjalla One', sans-serif;
+}
 /* ==========================================================================
    01 - General
    ========================================================================== */
@@ -37,6 +47,34 @@ h1 {
     letter-spacing: 0.25em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
+h2 {
+    @include fjallaFont();
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    vertical-align: middle;
+    span {
+        font-family: 'Roboto Slab', serif;
+        font-size: 0.25em;
+        font-weight: normal;
+        letter-spacing: 0.15em;
+        vertical-align: middle;
+        width: 90px;
+        display: inline-block;
+    }
+    &.left {
+        span { text-align: right; }
+    }
+    &.right {
+        span { text-align: left; }
+    }
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 2.5em;
+    letter-spacing: 0.1em;
+}
 
 a {
     color: $silver;
@@ -45,6 +83,9 @@ a {
     @include basicAnimateAll();
     &:hover {
         border-bottom: 1px solid $silver;
+    }
+    &.no-border {
+        &:hover { border-bottom: 1px solid transparent;}
     }
 }
 
@@ -57,6 +98,9 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-padding-start: 0;
     &.hlist {
         li {
             list-style: none;
@@ -64,6 +108,24 @@ ul {
             margin-right: 5px;
             &:last-child { margin-right: 0; }
         }
+    }
+    &.vlist {
+        li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.line {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    border-left: 1px solid $goldy;
+    margin-left: 84px;
+    &.r-line {
+        right: 71px;
+        margin-right: 15px;
     }
 }
 
@@ -114,19 +176,176 @@ $font-Flaticon-social-media: "\f101";
 $font-Flaticon-black: "\f102";
 $font-Flaticon-signs: "\f103";
 
+/* ==========================================================================
+   03 - Nav
+   ========================================================================= */
+nav {
+    background: rgba(34,34,34,0.95);
+    height: 70px;
+    border-bottom: 1px solid $goldy;
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+    top: -70px;
+    @include basicAnimateAll(.3s);
+    -webkit-transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+    -moz-timing-function: cubic-bezier(0.42, 0, 1, 1);
+    transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+
+    &.showMeTheMoney {
+        -webkit-transform: translate3d(0, 70px, 0px);
+        -moz-transform: translate3d(0, 70px, 0px);
+        -ms-transform: translate3d(0, 70px, 0px);
+        -o-transform: translate3d(0, 70px, 0px);
+        transform: translate3d(0, 70px, 0px);
+    }
+
+    .container {
+        width: 960px;
+        margin: 0 auto;
+        display: table;
+        height: 70px;
+    }
+    .logo {
+        display: table-cell;
+        vertical-align: middle;
+        width: 44px;
+        img {
+            width: 75px;
+        }
+        &:hover {
+            @include lessenOpacity();
+        }
+    }
+    .hlist {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: right;
+        height: 70px;
+        li {
+            margin-right: 25px;
+            a {
+                display: table-cell;
+                vertical-align: middle;
+                height: 70px;
+                text-transform: uppercase;
+                font-weight: 300;
+                letter-spacing: .05em;
+                &:hover {
+                    border-bottom: 1px solid $jhoBlue;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
 
 /* ==========================================================================
-   03 - Pages
+   04 - Footer
+   ========================================================================= */
+footer {
+    background-color: $lightGrey;
+    padding: 80px 0;
+
+    .container {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        display: table;
+        padding: 0 15px;
+        > * {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .logo {
+            width: 71px;
+            padding-right: 25px;
+            img { width: 71px; }
+        }
+
+        .text {
+            .vlist {
+                li {
+                    line-height: 1em;
+                    margin-bottom: 15px;
+                    h3 {
+                        font-family: 'Fjalla One', sans-serif;
+                        font-size: 1.7em;
+                        letter-spacing: 0.4em;
+                        text-transform: uppercase;
+                        color: $darkGrey;
+                        margin: 0;
+                        line-height: 1em;
+                    }
+                    h4 {
+                        margin: 0;
+                        color: $darkGrey;
+                        line-height: 1em;
+                    }
+                    a {
+                        color: $medGrey;
+                        span { @include basicAnimateAll(); }
+                        &:hover {
+                            border-bottom: transparent;
+                            .fi {
+                                color: $jhoBlue;
+                            }
+                        }
+                    }
+                    &:last-child { margin-bottom: 0; }
+                }
+            }
+        }
+
+        .right {
+            text-align: right;
+            color: $medGrey;
+
+            .vlist {
+                li {
+                    .hlist {
+                        li {
+                            margin-right: 20px;
+                            margin-bottom: 0;
+                            a {
+                                span {
+                                    font-size: 2em;
+                                    @include basicAnimateAll();
+                                    &.flaticon-linkedin { font-size: 1.6em; }
+                                    &.flaticon-social-media { font-size: 1.8em; }
+                                }
+                                
+                                &:hover {
+                                    span { color: $jhoBlue; }
+                                }
+                            }
+                            &:last-child { margin-right: 0; }
+                        }
+                    }
+                    &:last-child { 
+                        margin-bottom: 0;
+                        font-size: 0.9em;
+                        letter-spacing: 0.15em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   05 - Pages
    ========================================================================== */
 section {
-    height: 100vh;
+    min-height: 100vh;
 
     .container {
         width: auto;
         max-width: 960px;
-        padding: 0 15px;
+        padding: 0 15px 0;
         margin: 0 auto;
-        height: 100%;
+        height: 100vh;
     }
 
     .content-container {
@@ -137,13 +356,24 @@ section {
         height: 100%;
         .content {
             display: table-cell;
+            padding-top: 100px;
             vertical-align: middle;
+            position: relative;
+            .above-line {
+                position: relative;
+                z-index: 101;
+            }
         }
     }
 
     // Home Page
     &#home {
+        padding-top: 0;
         text-align: center;
+        height: 100vh;
+
+        > .container { padding-top: 0; }
+
         h1 { text-transform: uppercase; }
         canvas {
             position: absolute;
@@ -192,7 +422,7 @@ section {
                     overflow: hidden;
                     position: relative;
 
-                    img { width: 75px; }
+                    img { width: 92px; }
 
                     .left-line,
                     .right-line {
@@ -212,6 +442,61 @@ section {
                     max-width: 500px;
                     margin: 25px auto;
                 }
+
+                .ratings {
+                    margin-top: 50px;
+                    .t {
+                        display: table;
+                        margin: 0 auto;
+                       > .tc {
+                            display: inline-block;
+                            margin-right: 15px;
+                            width: 100px;
+                            height: 100px;
+                            &:last-child { padding-right: 0; }
+                        }
+                    }
+                    .progress {
+                        .circle {
+                            .progressbar-text {
+                                @include fjallaFont();
+                                font-size: 3em;
+                            }
+                        }
+                    }
+                    .texts {
+                        .tc {
+                            padding-top: 10px;
+                            text-align: center;
+                            text-transform: uppercase;
+                            font-size: 0.8em;
+                            letter-spacing: 0.1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &#skills {
+        .content-container {
+            vertical-align: top;
+            .content {
+                vertical-align: top;
+                text-align: left;
+                .r-line { margin-top: 100px; }
+            }
+        }
+    }
+
+    &#portfolio {
+        .content-container {
+            vertical-align: top;
+            .content {
+                vertical-align: top;
+                text-align: right;
+                .l-line { height: 95%; }
+                .r-line { height: 92%; }
             }
         }
     }
