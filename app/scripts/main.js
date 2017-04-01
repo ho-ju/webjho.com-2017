@@ -74,9 +74,13 @@
 
   // Your custom JavaScript goes here
 
+  var aboutSectionFirstLoad = true;
   var WebJhoApp = function() {};
 
   WebJhoApp.prototype = {
+    /**
+     * Loads particle library background
+     */
     initParticles: function() {
       particlesJS.load(
         'home',
@@ -86,14 +90,39 @@
         }
       );
     },
+    /**
+     * Scroll to hash bang if in URL on initial load.
+     */
+    initCheckScrollPageOnLoad: function() {
+      var hashBang = window.location.hash;
+
+      if (hashBang) {
+        var $target = $(hashBang);
+        window.setTimeout(function() {
+          $('html, body').stop().animate({
+            scrollTop: $target.offset().top + 2
+          }, 500, 'swing');
+        }, 750);
+      }
+    },
+    /**
+     * Show Nav on Scroll, call function to set active state on scroll
+     */
     initNavWatch: function() {
-      var triggerPoint = $('#about').position().top;
+      var triggerPoint = 70;
       var $nav = $('nav');
-      var currPos = 0;
+      var currPos = $(window).scrollTop();
       console.log(triggerPoint);
 
+      // First Load
+      if (currPos >= triggerPoint) {
+        $nav.addClass('showMeTheMoney');
+      }
+
+      // On Scroll
       $(window).scroll(function() {
         currPos = $(window).scrollTop();
+        WebJhoApp.prototype.initNavActiveScroll();
         if (currPos >= triggerPoint) {
           $nav.addClass('showMeTheMoney');
         } else {
@@ -101,6 +130,56 @@
         }
       });
     },
+    /**
+     * Add active class to relavant menu item on click
+     */
+    initNavClickScroll: function() {
+      $('nav a').on('click', function(e) {
+        e.preventDefault();
+        $(window).off('scroll');
+
+        $('a').each(function() {
+          $(this).removeClass('active');
+        });
+        $(this).addClass('active');
+
+        var target = this.hash;
+        var $target = $(target);
+        $('html, body').stop().animate({
+          scrollTop: $target.offset().top + 2
+        }, 500, 'swing', function() {
+          window.location.hash = target;
+          WebJhoApp.prototype.initNavWatch();
+        });
+      });
+    },
+    /**
+     * Add active class to relavant menu item on scroll
+     */
+    initNavActiveScroll: function() {
+      var scrollPos = $(document).scrollTop();
+      $('nav a').each(function() {
+        var currLink = $(this);
+        var refElement = $(currLink.attr('href'));
+        var offset = -150;
+        if ((refElement.position().top + offset) <= scrollPos &&
+          (refElement.position().top + offset) + refElement.height() >
+          scrollPos) {
+          $('nav ul li a').removeClass('active');
+          currLink.addClass('active');
+          if (currLink.attr('href') === '#about' && aboutSectionFirstLoad) {
+            WebJhoApp.prototype.initBars();
+            aboutSectionFirstLoad = false;
+          }
+        } else {
+          currLink.removeClass('active');
+        }
+      });
+    },
+
+    /**
+     * Sets Loading bar for About section
+     */
     initBars: function() {
       var opts = {
         strokeWidth: 6,
@@ -128,15 +207,23 @@
       var bar1 = new ProgressBar.Circle(cssBar, opts);
 
       opts.color = '#e69138';
+      opts.duration = 1600;
+      opts.text.value = '80';
       var bar2 = new ProgressBar.Circle(jsBar, opts);
 
       opts.color = '#0f7e8e';
+      opts.duration = 1800;
+      opts.text.value = '90';
       var bar3 = new ProgressBar.Circle(teamBar, opts);
 
       opts.color = '#a64d79';
+      opts.duration = 2000;
+      opts.text.value = '90';
       var bar4 = new ProgressBar.Circle(commBar, opts);
 
       opts.color = '#3d85c6';
+      opts.duration = 2200;
+      opts.text.value = '70';
       var bar5 = new ProgressBar.Circle(leaderBar, opts);
 
       // Animate
@@ -148,12 +235,15 @@
     }
   };
 
+  // Document Ready
   $(function() {
     console.log('ready');
 
     var myApp = new WebJhoApp();
-    myApp.initParticles();
+    myApp.initCheckScrollPageOnLoad();
     myApp.initNavWatch();
-    myApp.initBars();
+    myApp.initNavClickScroll();
+    myApp.initNavActiveScroll();
+    myApp.initParticles();
   });
 })();

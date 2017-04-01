@@ -231,7 +231,8 @@ nav {
                 text-transform: uppercase;
                 font-weight: 300;
                 letter-spacing: .05em;
-                &:hover {
+                &:hover,
+                &.active {
                     border-bottom: 1px solid $jhoBlue;
                     color: $white;
                 }
