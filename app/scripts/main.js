@@ -152,20 +152,32 @@
           WebJhoApp.prototype.initNavWatch();
         });
       });
+
+      $('.down-arrows').on('click', function(e) {
+        e.preventDefault();
+
+        var target = $(this).attr('data-link');
+        var $target = $(target);
+        $('html, body').stop().animate({
+          scrollTop: $target.offset().top + 2
+        }, 500, 'swing', function() {
+          window.location.hash = target;
+        });
+      });
     },
     /**
      * Add active class to relavant menu item on scroll
      */
     initNavActiveScroll: function() {
       var scrollPos = $(document).scrollTop();
-      $('nav a').each(function() {
+      $('nav .desktop-menu a').each(function() {
         var currLink = $(this);
         var refElement = $(currLink.attr('href'));
         var offset = -150;
         if ((refElement.position().top + offset) <= scrollPos &&
           (refElement.position().top + offset) + refElement.height() >
           scrollPos) {
-          $('nav ul li a').removeClass('active');
+          $('nav .desktop-menu ul li a').removeClass('active');
           currLink.addClass('active');
           if (currLink.attr('href') === '#about' && aboutSectionFirstLoad) {
             WebJhoApp.prototype.initBars();
@@ -232,6 +244,33 @@
       bar3.animate(0.9);
       bar4.animate(0.9);
       bar5.animate(0.7);
+    },
+
+    initMobileMenu: function() {
+      $('nav .c-hamburger').on('click', function() {
+        $(this).toggleClass('isActive');
+        $(this).parent().next().toggleClass('isActive');
+      });
+
+      $('nav .mobile-menu li a').on('click', function(e) {
+        var target = this.hash;
+        var $target = $(target);
+        var offset = 51;
+        $('html, body').stop().animate({
+          scrollTop: $target.offset().top - offset
+        }, 500, 'swing', function() {
+          window.location.hash = target;
+          $('nav .mobile-menu .drop-menu').removeClass('isActive');
+          $('nav .mobile-menu .c-hamburger').removeClass('isActive');
+        });
+        e.preventDefault();
+      });
+    },
+
+    isMobile: function() {
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true;
+      }
     }
   };
 
@@ -240,10 +279,15 @@
     console.log('ready');
 
     var myApp = new WebJhoApp();
-    myApp.initCheckScrollPageOnLoad();
-    myApp.initNavWatch();
-    myApp.initNavClickScroll();
-    myApp.initNavActiveScroll();
-    myApp.initParticles();
+    if (!myApp.isMobile()) {
+      myApp.initCheckScrollPageOnLoad();
+      myApp.initNavWatch();
+      myApp.initNavClickScroll();
+      myApp.initNavActiveScroll();
+      myApp.initParticles();
+    } else {
+      myApp.initBars();
+      myApp.initMobileMenu();
+    }
   });
 })();

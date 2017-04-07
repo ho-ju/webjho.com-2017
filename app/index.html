@@ -39,7 +39,7 @@
     <!-- Add your site or app content here -->
 
     <nav>
-        <div class="container">
+        <div class="container hidden-mobile desktop-menu">
             <a href="#home"class="logo no-border"><img src="/images/logo.png" alt="Web J.Ho"></a>
             <ul class="hlist">
                 <li><a href="#about">About</a></li>
@@ -47,6 +47,22 @@
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#footer">Contact</a></li>
             </ul>
+        </div>
+        <div class="hidden-desktop mobile-menu">
+            <div class="container">
+                <span class="c-hamburger c-hamburger--htx">
+                    <span>toggle menu</span>
+                </span>
+                <a href="#home"class="logo no-border"><img src="/images/logo.png" alt="Web J.Ho"></a>
+            </div>
+            <div class="drop-menu">
+                <ul class="vlist">
+                    <li><a href="#about" class="no-border"><span class="fi flaticon-social"></span><span class="text">About</span></span></a></li>
+                    <li class="skills"><a href="#skills" class="no-border"><span class="fi flaticon-technology"></span><span class="text">Skills</span></a></li>
+                    <li class="port"><a href="#portfolio" class="no-border"><span class="fi flaticon-photo"></span><span class="text">Portfolio</span></a></li>
+                    <li><a href="#footer" class="no-border"><span class="fi flaticon-communication"></span><span class="text">Contact</span></a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -57,33 +73,49 @@
                     <img src="/images/logo.png" alt="web jho" class="logo">
                     <h1>Front End Developer</h1>
                     <div class="contact">
-                        <ul class="hlist">
+                         <ul class="hlist">
                             <li>
-                                <a href="#">
+                                <a href="https://www.linkedin.com/in/james-ho-183b628/" class="no-border">
                                     <span class="fi flaticon-linkedin"></span>
                                     <span class="text">LinkedIn</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="skype:hoju20?chat" class="no-border">
                                     <span class="fi flaticon-social-media"></span>
                                     <span class="text">hoju20</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="mai&#108;to&#58;j%2&#69;ho%2E2%&#54;&#66;4&#64;gm%&#54;1&#105;&#108;%2&#69;c&#111;%&#54;D" class="no-border">
                                     <span class="fi flaticon-black"></span>
                                     <span class="text">Email</span>
                                 </a>
                             </li>
+                            </li>
                             <li>
-                                <a href="#">
+                                <a href="https://www.google.com.au/maps/place/Melbourne+VIC/@-37.9722342,144.7729575,10z/data=!3m1!4b1!4m5!3m4!1s0x6ad646b5d2ba4df7:0x4045675218ccd90!8m2!3d-37.8136276!4d144.9630576">
                                     <span class="fi flaticon-signs"></span>
                                     <span class="text">Melbourne, AUS</span>
                                 </a>
                             </li>
                         </ul>
+                        <ul class="hlist">
+                            <li>
+                                <a href="https://github.com/ho-ju" class="no-border">
+                                    <span class="fi flaticon-circle"></span>
+                                    <span class="text">ho-ju</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://bitbucket.org/hoju20/thebsharps/commits/all" class="no-border">
+                                    <span class="fi flaticon-camera"></span>
+                                    <span class="text">hoju20</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
+                    <div class="down-arrows hidden-mobile" data-link="#about"><span class="fi flaticon-arrows"></span></div>
                 </div>
             </div>
         </div>
@@ -112,12 +144,19 @@
                             <div id="commBar" class="circle tc"></div>
                             <div id="leaderBar" class="circle tc"></div>
                         </div>
-                        <div class="texts t">
+                        <div class="texts t hidden-mobile">
                             <div id="css" class="tc">CSS</div>
                             <div id="js" class="tc">Javascript</div>
                             <div id="team" class="tc">Team Work</div>
                             <div id="comm" class="tc">Communication</div>
                             <div id="leader" class="tc">Leadership</div>
+                        </div>
+                        <div class="texts t hidden-desktop">
+                            <div id="css" class="tc">CSS</div>
+                            <div id="js" class="tc">JS</div>
+                            <div id="team" class="tc">Team</div>
+                            <div id="comm" class="tc">Comm</div>
+                            <div id="leader" class="tc">L'Ship</div>
                         </div>
                     </div>
                 </div>
@@ -129,10 +168,80 @@
          <div class="container">
             <div class="content-container">
                 <div class="content">
-                    <div class="line l-line"></div>
-                    <div class="line r-line"></div>
+                    <div class="line l-line hidden-mobile"></div>
+                    <div class="line r-line hidden-mobile"></div>
                     <div class="above-line">
-                        <h2 class="left"><span class="sub-title">Building &mdash;</span> Skills</h2>
+                        <h2 class="left"><span class="sub-title hidden-mobile">Building &mdash;</span>Skills</h2>
+
+                        <div class="table">
+                            <div class="line h-line top hidden-mobile"></div>
+                            <div class="line h-line btm hidden-mobile"></div>
+                            <div class="line line1 hidden-mobile"></div>
+                            <div class="line line2 hidden-mobile"></div>
+
+                            <div id="tech" class="td">
+                                <h3>
+                                    <span class="icon fi flaticon-technology"></span>
+                                    <span class="text">Tech</span>
+                                </h3>
+                                <div class="list">
+                                    <span>HTML5&nbsp;&nbsp;|&nbsp;&nbsp;CSS3&nbsp;&nbsp;|&nbsp;&nbsp;LESS/SASS&nbsp;&nbsp;|&nbsp;&nbsp;Angular JS v1.x&nbsp;&nbsp;|&nbsp;&nbsp;JavaScript&nbsp;&nbsp;|&nbsp;&nbsp;jQuery&nbsp;&nbsp;|&nbsp;&nbsp;Node.js&nbsp;&nbsp;|&nbsp;&nbsp;Grunt.js&nbsp;&nbsp;|&nbsp;&nbsp;SEO&nbsp;&nbsp;|&nbsp;&nbsp;Web standards and accessibility</span>
+                                    <span>Sitecore&nbsp;&nbsp;|&nbsp;&nbsp;Wordpress&nbsp;&nbsp;|&nbsp;&nbsp;Umbraco&nbsp;&nbsp;|&nbsp;&nbsp;Mezzanine&nbsp;&nbsp;|&nbsp;&nbsp;Brightcove&nbsp;&nbsp;|&nbsp;&nbsp;Ooyala</span>
+                                    <span>Agile&nbsp;&nbsp;|&nbsp;&nbsp;Github&nbsp;&nbsp;|&nbsp;&nbsp;Tortoise SVN&nbsp;&nbsp;|&nbsp;&nbsp;Jira&nbsp;&nbsp;|&nbsp;&nbsp;Bitbucket&nbsp;&nbsp;|&nbsp;&nbsp;Confluence</span>
+                                    <span class="intro">Posses an understanding of:</span>
+                                    <span>C#&nbsp;&nbsp;|&nbsp;&nbsp;ASP.net&nbsp;&nbsp;|&nbsp;&nbsp;Django&nbsp;&nbsp;|&nbsp;&nbsp;ASP&nbsp;&nbsp;|&nbsp;&nbsp;PHP&nbsp;&nbsp;|&nbsp;&nbsp;Java&nbsp;&nbsp;|&nbsp;&nbsp;mySQL&nbsp;&nbsp;|&nbsp;&nbsp;PHPmyAdmin</span>
+                                </div>
+                                <ul class="hlist">
+                                    <li><a href="https://www.w3.org/html/logo/"><img src="/images/logo-html5.png" alt="HTML5"></a></li>
+                                    <li><a href="https://developer.mozilla.org/en/docs/Web/CSS/CSS3"><img src="/images/logo-css3.png" alt="CSS3"></a></li>
+                                    <li class="angular"><a href="https://angularjs.org/"><img src="/images/logo-angular.png" alt="Angular JS"></a></li>
+                                    <li><a href="http://www.sitecore.net/"><img src="/images/logo-sitecore.png" alt="Sitecore"></a></li>
+                                </ul>
+                            </div>
+                            <div id="works" class="td">
+                                <h3>
+                                    <span class="icon fi flaticon-tool"></span>
+                                    <span class="text">Work</span>
+                                </h3>
+                                <ul class="vlist works-list">
+                                    <li>
+                                        <a href="http://www.racing.com"><img src="/images/logo-racing.png" alt="Racing.com"></a>
+                                        <div>
+                                            <h4>Racing.com</h4>
+                                            <h5>Lead Front End Developer</h5>
+                                            <p class="date">MARCH '14 - NOW&nbsp;|&nbsp;MELBOURNE, AUS</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/company-beta/367247/"><img src="/images/logo-igloo.png" alt="Igloo Digital Agency"></a>
+                                        <div>
+                                            <h4>Igloo Digital Agency</h4>
+                                            <h5>Front End Developer</h5>
+                                            <p class="date">JAN '12 - JAN '14&nbsp;|&nbsp;MELBOURNE, AUS</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/company-beta/10663/"><img src="/images/logo-citrus.png" alt="Citrus Interactive Agency"></a>
+                                        <div>
+                                            <h4>Citrus Digital Agency</h4>
+                                            <h5>Interface Developer</h5>
+                                            <p class="date">JUNE '08 - DEC '11&nbsp;|&nbsp;MELBOURNE, AUS</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="learned" class="td">
+                                <h3>
+                                    <span class="icon fi flaticon-book"></span>
+                                    <span class="text">Educate</span>
+                                </h3>
+
+                                <h4>Bachelor of Info Tech (Scholarship)</h4>
+                                <h5>Swinburne University, Melbourne</h5>
+                                <p class="date">MARCH '04 - MARCH '07</p>
+                                <a href="http://www.swinburne.edu.au/"><img src="/images/logo-swinburne.png" alt="Swinburne"></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -143,10 +252,157 @@
          <div class="container">
             <div class="content-container">
                 <div class="content">
-                    <div class="line l-line"></div>
-                    <div class="line r-line"></div>
+                    <div class="line l-line hidden-mobile"></div>
+                    <div class="line r-line hidden-mobile"></div>
                     <div class="above-line">
-                        <h2 class="right">Portfolio<span class="sub-title">&mdash; Established</span></h2>
+                        <h2 class="right">Portfolio<span class="sub-title hidden-mobile">&mdash; Established</span></h2>
+
+                        <div class="port-container">
+                            <div class="tile lg">
+                                <a href="https://www.racing.com/" target="_blank" class="no-border">
+                                    <div class="thumb">
+                                        <img src="/images/portfolio/racing.jpg" alt="Racing.com">
+                                        <div class="overlay"></div>
+                                        <span class="award">Winner Sitecore Awards</span>
+                                        <span class="external fi flaticon-arrow"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="text">
+                                            <h4>Racing.com</h4>
+                                            <h5>Angular JS&nbsp;&nbsp;|&nbsp;&nbsp;API's&nbsp;&nbsp;|&nbsp;&nbsp;Sitecore</h5>
+                                            <p>Developed the Racing.com website from inception using various tools including AngularJS, Sitecore, LESS and Brightcove</p>
+                                        </div>
+                                        <div class="date">
+                                            <span class="date-text">2017</span>
+                                            <span class="dash"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tile lg">
+                                <a href="https://www.racing.com/" target="_blank" class="no-border">
+                                    <div class="thumb">
+                                        <img src="/images/portfolio/racing-form.jpg" alt="Racing.com Form">
+                                        <div class="overlay"></div>
+                                        <span class="award">Winner Sitecore Awards</span>
+                                        <span class="external fi flaticon-arrow"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="text">
+                                            <h4>Racing.com&nbsp;&nbsp;|&nbsp;&nbsp;Form Guide</h4>
+                                            <h5>Angular JS&nbsp;&nbsp;|&nbsp;&nbsp;API's&nbsp;&nbsp;&nbsp;|&nbsp;Sitecore</h5>
+                                            <p>Developed a comprehensive Interactive Form Guide using AngularJS with custom and 3rd Party API calls</p>
+                                        </div>
+                                        <div class="date">
+                                            <span class="date-text">2016</span>
+                                            <span class="dash"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tile lg">
+                                <a href="https://www.racing.com/" target="_blank" class="no-border">
+                                    <div class="thumb">
+                                        <img src="/images/portfolio/racing-video.jpg" alt="Racing.com Videos">
+                                        <div class="overlay"></div>
+                                        <span class="award">Winner Sitecore Awards</span>
+                                        <span class="external fi flaticon-arrow"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="text">
+                                            <h4>Racing.com&nbsp;&nbsp;|&nbsp;&nbsp;Video Hub</h4>
+                                            <h5>Angular JS&nbsp;&nbsp;|&nbsp;&nbsp;Brightcove&nbsp;&nbsp;|&nbsp;&nbsp;API's&nbsp;&nbsp;|&nbsp;&nbsp;Sitecore</h5>
+                                            <p>Developed a responsive Video Hub in AngularJS with custom API Calls and Brightcove Player customisation</p>
+                                        </div>
+                                        <div class="date">
+                                            <span class="date-text">2017</span>
+                                            <span class="dash"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="port-container">
+                            <div class="tile sm">
+                                <a href="https://www.racing.com/" target="_blank" class="no-border">
+                                    <div class="thumb">
+                                        <img src="/images/portfolio/racing-vision.jpg" alt="Racing.com - Live Vision">
+                                        <div class="overlay"></div>
+                                        <span class="external fi flaticon-arrow"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="text">
+                                            <h4>Racing.com&nbsp;&nbsp;|&nbsp;&nbsp;Vision</h4>
+                                            <h5>Angular JS&nbsp;&nbsp;|&nbsp;&nbsp;Ooyala</h5>
+                                            <p>Live Vision Stream using Ooyla Player</p>
+                                        </div>
+                                        <div class="date">
+                                            <span class="date-text">2016</span>
+                                            <span class="dash"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.perthracing.org.au/" target="_blank" class="no-border">
+                                    <div class="thumb">
+                                        <img src="/images/portfolio/perth-racing.jpg" alt="Perth Racing">
+                                        <div class="overlay"></div>
+                                        <span class="external fi flaticon-arrow"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="text">
+                                            <h4>Perthracing.org.au</h4>
+                                            <h5>Angular JS&nbsp;&nbsp;|&nbsp;&nbsp;LESS</h5>
+                                            <p>New Hub site for Perth Racing, Australia</p>
+                                        </div>
+                                        <div class="date">
+                                            <span class="date-text">2016</span>
+                                            <span class="dash"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tile lg">
+                                <a href="http://thebsharps.com" target="_blank" class="no-border">
+                                    <div class="thumb">
+                                        <img src="/images/portfolio/bsharps.jpg" alt="The B-Sharps">
+                                        <div class="overlay"></div>
+                                        <span class="external fi flaticon-arrow"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="text">
+                                            <h4>thebsharps.com</h4>
+                                            <h5>Angular JS&nbsp;&nbsp;|&nbsp;&nbsp;MySQL&nbsp;&nbsp;|&nbsp;&nbsp;API's&nbsp;&nbsp;&nbsp;|&nbsp;PHP</h5>
+                                            <p>Developed a statistical based website for local basketball team using AngularJS, PHP, MySQL and custom built API's</p>
+                                        </div>
+                                        <div class="date">
+                                            <span class="date-text">2017</span>
+                                            <span class="dash"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tile sm">
+                                <a href="http://country.racing.com/clubs" target="_blank" class="no-border">
+                                    <div class="thumb">
+                                        <img src="/images/portfolio/country-racing-maps.jpg" alt="Country Racing Club Finder">
+                                        <div class="overlay"></div>
+                                        <span class="external fi flaticon-arrow"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="text">
+                                            <h4>Country Racing&nbsp;&nbsp;|&nbsp;&nbsp;Map</h4>
+                                            <h5>Angular JS&nbsp;&nbsp;|&nbsp;&nbsp;Google Maps</h5>
+                                            <p>Interactive club finder using Google Maps API</p>
+                                        </div>
+                                        <div class="date">
+                                            <span class="date-text">2016</span>
+                                            <span class="dash"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -155,42 +411,54 @@
 
     <footer id="footer">
         <div class="container">
-            <div class="logo"><img src="/images/jho.png" alt="Web J.Ho"></div>
-            <div class="text">
-                <ul class="vlist">
-                    <li><h3>webjho.com</h3></li>
-                    <li><h4>Front End Developer</h5></li>
-                    <li>
-                        <a href="#">
-                            <span class="fi flaticon-signs"></span>
-                            <span class="text">Melbourne, AUS</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="right">
-                <ul class="vlist">
-                    <li>
-                        <ul class="hlist">
-                            <li>
-                                <a href="#" class="no-border">
-                                    <span class="fi flaticon-linkedin"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="no-border">
-                                    <span class="fi flaticon-social-media"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="no-border">
-                                    <span class="fi flaticon-black"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <li>&copy; webjho 2017<li>
-                    </li>
-                </ul>
+            <div class="content">
+                <div class="logo"><img src="/images/jho.png" alt="Web J.Ho"></div>
+                <div class="text">
+                    <ul class="vlist">
+                        <li><h3>webjho.com</h3></li>
+                        <li><h4>Front End Developer</h5></li>
+                        <li>
+                            <a href="#">
+                                <span class="fi flaticon-signs"></span>
+                                <span class="text">Melbourne, AUS</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul class="vlist">
+                        <li>
+                            <ul class="hlist">
+                                <li>
+                                    <a href="https://www.linkedin.com/in/james-ho-183b628/" class="no-border">
+                                        <span class="fi flaticon-linkedin"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="skype:hoju20?chat" class="no-border">
+                                        <span class="fi flaticon-social-media"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mai&#108;to&#58;j%2&#69;ho%2E2%&#54;&#66;4&#64;gm%&#54;1&#105;&#108;%2&#69;c&#111;%&#54;D" class="no-border">
+                                        <span class="fi flaticon-black"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/ho-ju" class="no-border">
+                                        <span class="fi flaticon-circle"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://bitbucket.org/hoju20/thebsharps/commits/all" class="no-border">
+                                        <span class="fi flaticon-camera"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <li>&copy; webjho 2017</li>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
