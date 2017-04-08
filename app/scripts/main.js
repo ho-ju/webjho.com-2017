@@ -148,7 +148,6 @@
         $('html, body').stop().animate({
           scrollTop: $target.offset().top + 2
         }, 500, 'swing', function() {
-          window.location.hash = target;
           WebJhoApp.prototype.initNavWatch();
         });
       });
@@ -160,9 +159,7 @@
         var $target = $(target);
         $('html, body').stop().animate({
           scrollTop: $target.offset().top + 2
-        }, 500, 'swing', function() {
-          window.location.hash = target;
-        });
+        }, 500, 'swing');
       });
     },
     /**
@@ -180,8 +177,10 @@
           $('nav .desktop-menu ul li a').removeClass('active');
           currLink.addClass('active');
           if (currLink.attr('href') === '#about' && aboutSectionFirstLoad) {
-            WebJhoApp.prototype.initBars();
             aboutSectionFirstLoad = false;
+            window.setTimeout(function() {
+              WebJhoApp.prototype.initBars();
+            }, 800); // Set Delay after page animations
           }
         } else {
           currLink.removeClass('active');
@@ -285,6 +284,11 @@
       myApp.initNavClickScroll();
       myApp.initNavActiveScroll();
       myApp.initParticles();
+      AOS.init({
+        duration: 300,
+        easing: 'ease-in-sine',
+        delay: 300
+      });
     } else {
       myApp.initBars();
       myApp.initMobileMenu();
