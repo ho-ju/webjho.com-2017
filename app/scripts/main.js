@@ -74,6 +74,11 @@
 
   // Your custom JavaScript goes here
 
+  /* global
+    particlesJS,$,ProgressBar,AOS,cssBar,jsBar,teamBar,commBar,leaderBar
+  */
+
+  // Global Vars
   var aboutSectionFirstLoad = true;
   var isMobile = false;
   var WebJhoApp = function() {};
@@ -281,7 +286,7 @@
 
     var myApp = new WebJhoApp();
     myApp.isMobileDevice();
-    
+
     AOS.init({
       duration: 300,
       easing: 'ease-in-sine',
@@ -294,7 +299,7 @@
       myApp.initNavClickScroll();
       myApp.initNavActiveScroll();
       myApp.initParticles();
-    } else {
+    } else if (isMobile) {
       myApp.initBars();
       myApp.initMobileMenu();
     }
