@@ -6,7 +6,7 @@ $white: #fff;
 $black: #111;
 $silver: #cfcbcb;
 $lightGrey: #eee;
-$darkGrey: #222;
+: #222;
 $medGrey: #666;
 $jhoBlue: #0f7e8e;
 $goldy: #555555;
@@ -72,7 +72,7 @@ $desktop:           "only screen and (min-width: 950px)";
    01 - General
    ========================================================================== */
 body {
-    background: url('/images/concrete-wall.png') top left repeat;
+    background: $darkGrey url('/images/concrete-wall.png') top left repeat;
     background-attachment: fixed;
     font-family: 'Roboto Slab', serif;
     color: $white;
@@ -792,7 +792,7 @@ section {
                 }
 
                 .ratings {
-                    margin-top: 50px;
+                    margin-top: 80px;
                     .t {
                         display: table;
                         margin: 0 auto;
