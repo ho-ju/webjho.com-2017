@@ -75,6 +75,7 @@
   // Your custom JavaScript goes here
 
   var aboutSectionFirstLoad = true;
+  var isMobile = false;
   var WebJhoApp = function() {};
 
   WebJhoApp.prototype = {
@@ -178,9 +179,10 @@
           currLink.addClass('active');
           if (currLink.attr('href') === '#about' && aboutSectionFirstLoad) {
             aboutSectionFirstLoad = false;
+            // Set Delay after page animations
             window.setTimeout(function() {
               WebJhoApp.prototype.initBars();
-            }, 800); // Set Delay after page animations
+            }, 800);
           }
         } else {
           currLink.removeClass('active');
@@ -266,9 +268,9 @@
       });
     },
 
-    isMobile: function() {
-      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        return true;
+    isMobileDevice: function() {
+      if (/Mobi/.test(navigator.userAgent)) {
+        isMobile = true;
       }
     }
   };
@@ -278,17 +280,20 @@
     console.log('ready');
 
     var myApp = new WebJhoApp();
-    if (!myApp.isMobile()) {
+    myApp.isMobileDevice();
+    
+    AOS.init({
+      duration: 300,
+      easing: 'ease-in-sine',
+      delay: 300
+    });
+
+    if (!isMobile) {
       myApp.initCheckScrollPageOnLoad();
       myApp.initNavWatch();
       myApp.initNavClickScroll();
       myApp.initNavActiveScroll();
       myApp.initParticles();
-      AOS.init({
-        duration: 300,
-        easing: 'ease-in-sine',
-        delay: 300
-      });
     } else {
       myApp.initBars();
       myApp.initMobileMenu();

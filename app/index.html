@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
+    <meta name="description" content="J.Ho (James Ho) Web Development, Melbourne">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>web | j.ho</title>
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
     <!-- Web Application Manifest -->
@@ -33,7 +33,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Roboto+Slab:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.min.css">
     <link rel="stylesheet" href="styles/custom.css">
-    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css">
 </head>
 
 <body>
@@ -41,7 +41,7 @@
 
     <nav>
         <div class="container hidden-mobile desktop-menu">
-            <a href="#home"class="logo no-border"><img src="/images/logo.png" alt="Web J.Ho"></a>
+            <a href="#home" class="logo no-border"><img src="/images/logo.png" alt="Web J.Ho"></a>
             <ul class="hlist">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -54,11 +54,11 @@
                 <span class="c-hamburger c-hamburger--htx">
                     <span>toggle menu</span>
                 </span>
-                <a href="#home"class="logo no-border"><img src="/images/logo.png" alt="Web J.Ho"></a>
+                <a href="#home" class="logo no-border"><img src="/images/logo.png" alt="Web J.Ho"></a>
             </div>
             <div class="drop-menu">
                 <ul class="vlist">
-                    <li><a href="#about" class="no-border"><span class="fi flaticon-social"></span><span class="text">About</span></span></a></li>
+                    <li><a href="#about" class="no-border"><span class="fi flaticon-social"></span><span class="text">About</span></a></li>
                     <li class="skills"><a href="#skills" class="no-border"><span class="fi flaticon-technology"></span><span class="text">Skills</span></a></li>
                     <li class="port"><a href="#portfolio" class="no-border"><span class="fi flaticon-photo"></span><span class="text">Portfolio</span></a></li>
                     <li><a href="#footer" class="no-border"><span class="fi flaticon-communication"></span><span class="text">Contact</span></a></li>
@@ -93,7 +93,6 @@
                                     <span class="text">Email</span>
                                 </a>
                             </li>
-                            </li>
                             <li>
                                 <a href="https://www.google.com.au/maps/place/Melbourne+VIC/@-37.9722342,144.7729575,10z/data=!3m1!4b1!4m5!3m4!1s0x6ad646b5d2ba4df7:0x4045675218ccd90!8m2!3d-37.8136276!4d144.9630576">
                                     <span class="fi flaticon-signs"></span>
@@ -116,7 +115,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="down-arrows hidden-mobile" data-link="#about"><span class="fi flaticon-arrows"></span></div>
+                    <div class="down-arrows hidden-mobile" data-link="#about" data-aos="fade-up" data-aos-delay="800" data-aos-offset="-500"><span class="fi flaticon-arrows"></span></div>
                 </div>
             </div>
         </div>
@@ -132,9 +131,9 @@
                         <img src="/images/jho.png" alt="Web J.Ho" data-aos="zoom-in" data-aos-delay="700">
                     </div>
                     <div class="text">
-                        <p>As an experienced Front End Web Developer, I have worked with a diverse range of companies and clients, utilising the latest techniques and technologies to develop websites and mobile applications.</p>
-                        <p>I live and breathe all things web and tech, and constantly strive to create amazing user experiences, priding myself on providing great attention to detail with an eagerness to research, lead and develop new skills.</p>
-                        <p>When I'm not playing with technology, you can find me..</p>
+                        <p>Front End "Ninja" by day, standard Ninja by night... probably entertainer for the rest.</p>
+                        <p>As an experienced Front End Web Developer working with a diverse range of clients, I constantly strive to create amazing user experiences, priding myself on providing great attention to detail with an eagerness to research, learn, lead and develop new skills.</p>
+                        <p>When I'm not plugged in to the Matrix, you can find me <a href="http://thebsharps.com/team/james-ho/#?pid=4">shooting hoops</a>, <a href="https://www.instagram.com/explore/tags/goldieandthelocks/">jammin' and giggin'</a>, attempting to keep up with Netflix and just generally trying to save the world.</p>
                     </div>
                     <div class="ratings">
                         <h3>At A Glance</h3>
@@ -153,11 +152,11 @@
                             <div id="leader" class="tc">Leadership</div>
                         </div>
                         <div class="texts t hidden-desktop">
-                            <div id="css" class="tc">CSS</div>
-                            <div id="js" class="tc">JS</div>
-                            <div id="team" class="tc">Team</div>
-                            <div id="comm" class="tc">Comm</div>
-                            <div id="leader" class="tc">L'Ship</div>
+                            <div id="cssM" class="tc">CSS</div>
+                            <div id="jsM" class="tc">JS</div>
+                            <div id="teamM" class="tc">Team</div>
+                            <div id="commM" class="tc">Comm</div>
+                            <div id="leaderM" class="tc">L'Ship</div>
                         </div>
                     </div>
                     <div class="down-arrows hidden-mobile" data-link="#skills"><span class="fi flaticon-arrows"></span></div>
@@ -234,7 +233,7 @@
                             </div>
                             <div id="learned" class="td">
                                 <h3>
-                                    <span class="icon fi flaticon-book"></span>
+                                    <span class="icon fi flaticon-business"></span>
                                     <span class="text">Educate</span>
                                 </h3>
 
@@ -414,14 +413,16 @@
 
     <footer id="footer">
         <div class="container">
+            <div class="line l-line hidden-mobile"></div>
+            <div class="line r-line hidden-mobile"></div>
             <div class="content">
                 <div class="logo"><img src="/images/jho.png" alt="Web J.Ho"></div>
                 <div class="text">
                     <ul class="vlist">
                         <li><h3>webjho.com</h3></li>
-                        <li><h4>Front End Developer</h5></li>
+                        <li><h4>Front End Developer</h4></li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.google.com.au/maps/place/Melbourne+VIC/@-37.9722342,144.7729575,10z/data=!3m1!4b1!4m5!3m4!1s0x6ad646b5d2ba4df7:0x4045675218ccd90!8m2!3d-37.8136276!4d144.9630576">
                                 <span class="fi flaticon-signs"></span>
                                 <span class="text">Melbourne, AUS</span>
                             </a>
@@ -458,8 +459,8 @@
                                     </a>
                                 </li>
                             </ul>
-                            <li>&copy; webjho 2017</li>
                         </li>
+                        <li>&copy; webjho 2017</li>
                     </ul>
                 </div>
             </div>
@@ -474,7 +475,7 @@
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!-- Google Analytics -->
     <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -487,7 +488,7 @@
         a.src = g;
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-XXXXX-X', 'auto');
+    ga('create', 'UA-20284563-1', 'auto');
     ga('send', 'pageview');
     </script>
     <!-- Built with love using Web Starter Kit -->

@@ -211,8 +211,9 @@ ul {
     bottom: 20px;
     position: absolute;
     left: calc(50% - 5px);
-    transform: rotate(-90deg);
     span {
+        display: block;
+        transform: rotate(-90deg)!important;
         @include basicAnimateAll();
         &:hover {
             cursor: pointer;
@@ -258,35 +259,37 @@ ul {
     font-smoothing: antialiased;
 }
 
-.flaticon-arrows:before { content: "\f100"; }
-.flaticon-communication:before { content: "\f101"; }
-.flaticon-photo:before { content: "\f102"; }
-.flaticon-social:before { content: "\f103"; }
-.flaticon-camera:before { content: "\f104"; }
-.flaticon-circle:before { content: "\f105"; }
-.flaticon-arrow:before { content: "\f106"; }
-.flaticon-book:before { content: "\f107"; }
-.flaticon-tool:before { content: "\f108"; }
-.flaticon-technology:before { content: "\f109"; }
-.flaticon-linkedin:before { content: "\f10a"; }
-.flaticon-social-media:before { content: "\f10b"; }
-.flaticon-black:before { content: "\f10c"; }
-.flaticon-signs:before { content: "\f10d"; }
+.flaticon-business:before { content: "\f100"; }
+.flaticon-arrows:before { content: "\f101"; }
+.flaticon-communication:before { content: "\f102"; }
+.flaticon-photo:before { content: "\f103"; }
+.flaticon-social:before { content: "\f104"; }
+.flaticon-camera:before { content: "\f105"; }
+.flaticon-circle:before { content: "\f106"; }
+.flaticon-arrow:before { content: "\f107"; }
+.flaticon-book:before { content: "\f108"; }
+.flaticon-tool:before { content: "\f109"; }
+.flaticon-technology:before { content: "\f10a"; }
+.flaticon-linkedin:before { content: "\f10b"; }
+.flaticon-social-media:before { content: "\f10c"; }
+.flaticon-black:before { content: "\f10d"; }
+.flaticon-signs:before { content: "\f10e"; }
 
-$font-Flaticon-arrows: "\f100";
-$font-Flaticon-communication: "\f101";
-$font-Flaticon-photo: "\f102";
-$font-Flaticon-social: "\f103";
-$font-Flaticon-camera: "\f104";
-$font-Flaticon-circle: "\f105";
-$font-Flaticon-arrow: "\f106";
-$font-Flaticon-book: "\f107";
-$font-Flaticon-tool: "\f108";
-$font-Flaticon-technology: "\f109";
-$font-Flaticon-linkedin: "\f10a";
-$font-Flaticon-social-media: "\f10b";
-$font-Flaticon-black: "\f10c";
-$font-Flaticon-signs: "\f10d";
+$font-Flaticon-business: "\f100";
+$font-Flaticon-arrows: "\f101";
+$font-Flaticon-communication: "\f102";
+$font-Flaticon-photo: "\f103";
+$font-Flaticon-social: "\f104";
+$font-Flaticon-camera: "\f105";
+$font-Flaticon-circle: "\f106";
+$font-Flaticon-arrow: "\f107";
+$font-Flaticon-book: "\f108";
+$font-Flaticon-tool: "\f109";
+$font-Flaticon-technology: "\f10a";
+$font-Flaticon-linkedin: "\f10b";
+$font-Flaticon-social-media: "\f10c";
+$font-Flaticon-black: "\f10d";
+$font-Flaticon-signs: "\f10e";
 
 /* ==========================================================================
    03 - Nav
@@ -545,6 +548,17 @@ footer {
         max-width: 960px;
         margin: 0 auto;
         padding: 0 15px;
+        position: relative;
+
+        .line {
+            top: -80px;
+            height: 30px;
+            &.r-line {
+                right: 86px;
+                height: 60px;
+            }
+        }
+
         .content {
             width: 100%;
             display: table;
@@ -699,6 +713,7 @@ section {
             z-index: 100;
             position: relative;
             padding-top: 0;
+            top: -50px;
 
             .logo {
                 @media #{$mobile} {
@@ -765,7 +780,7 @@ section {
                     }
                 }
                 .text {
-                    max-width: 500px;
+                    max-width: 510px;
                     margin: 25px auto;
                 }
 
@@ -810,6 +825,7 @@ section {
         }
     }
 
+    // Skills Page
     &#skills {
         .content-container {
             vertical-align: top;
@@ -907,7 +923,6 @@ section {
                                 span {
                                     -ms-word-break: break-all;
                                     word-break: break-all;
-                                    word-break: break-word;
                                     margin-bottom: 20px;
                                     display: block;
                                     font-size: 0.9em;
@@ -973,7 +988,7 @@ section {
                             text-align: center;
                             h3 {
                                 .icon {
-                                    font-size: 1.7em;
+                                    font-size: 1.75em;
                                     width: 20px;
                                 }
                             }
@@ -992,15 +1007,21 @@ section {
         }
     }
 
+    // Portfolio Page
     &#portfolio {
+        overflow: hidden;
+        min-height: 100vh;
+        height: 100%;
+        .container {
+            min-height: 100vh;
+            height: 100%;
+        }
         .content-container {
             vertical-align: top;
             text-align: left;
             @media #{$mobile} { padding-bottom: 30px; }
             .content {
                 vertical-align: top;
-                .l-line { height: 95%; }
-                .r-line { height: 92%; }
 
                 h2 {
                     text-align: right;
