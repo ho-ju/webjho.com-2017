@@ -90,10 +90,7 @@
     initParticles: function() {
       particlesJS.load(
         'home',
-        '/scripts/libs/particlesjs-config.json',
-        function() {
-          console.log('particles.js loaded - callback');
-        }
+        '/scripts/libs/particlesjs-config.json'
       );
     },
     /**
@@ -118,7 +115,6 @@
       var triggerPoint = 70;
       var $nav = $('nav');
       var currPos = $(window).scrollTop();
-      console.log(triggerPoint);
 
       // First Load
       if (currPos >= triggerPoint) {
@@ -282,8 +278,6 @@
 
   // Document Ready
   $(function() {
-    console.log('ready');
-
     var myApp = new WebJhoApp();
     myApp.isMobileDevice();
 
