@@ -67,6 +67,17 @@ $desktop:           "only screen and (min-width: 950px)";
         display:inline-block;
     }
 }
+@media #{$tablet} {
+    .hidden-desktop {
+        display:none!important;
+    }
+    .visible-desktop {
+        display:block;
+    }
+    .visible-desktop-inline-block {
+        display:inline-block;
+    }
+}
 
 /* ==========================================================================
    01 - General
@@ -725,6 +736,7 @@ section {
             .logo {
                 @media #{$mobile} {
                     width: 90%;
+                    max-width: 300px;
                     padding: 0;
                 }
             }
@@ -796,6 +808,7 @@ section {
                     .t {
                         display: table;
                         margin: 0 auto;
+                        @media #{$mobile} { display: block; }
                        > .tc {
                             display: inline-block;
                             margin-right: 15px;
@@ -803,8 +816,8 @@ section {
                             height: 100px;
                             @media #{$mobile} {
                                 margin-right: 10px;
-                                width: 50px;
-                                height: 50px;
+                                width: 16%;
+                                height: 16%;
                             }
                             &:last-child { margin-right: 0; }
                         }
@@ -976,11 +989,13 @@ section {
                                         display: table-cell;
                                         vertical-align: top;
                                     }
+                                    .logo {
+                                        width: 50px;
+                                        padding-right: 10px;
+                                    }
                                     a {
                                         display: block;
                                         width: 50px;
-                                        text-align: left;
-                                        padding-right: 10px;
                                         img { width: 50px; }
                                     }
                                     p.date {
