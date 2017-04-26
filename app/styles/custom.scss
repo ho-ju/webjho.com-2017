@@ -82,6 +82,13 @@ $desktop:           "only screen and (min-width: 950px)";
 /* ==========================================================================
    01 - General
    ========================================================================== */
+::selection {
+  background: $jhoBlue; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $jhoBlue; /* Gecko Browsers */
+}
+
 body {
     background: $darkGrey url('/images/concrete-wall.png') top left repeat;
     background-attachment: fixed;
